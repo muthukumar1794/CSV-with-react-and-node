@@ -19,7 +19,6 @@ app.get('/get/csvfile/data', async (req, res, next) => {
             return filecontent
         })
         const dataArray = file.split(/\r?\n/);
-        console.log("ffffffff")
 
         let mainArray = [];
         for (let index = 0; index < dataArray.length; index++) {
@@ -33,7 +32,7 @@ app.get('/get/csvfile/data', async (req, res, next) => {
             data: mainArray
         })
     } catch (err) {
-        console.log("errrrrrrr,", err);
+       throw err
     }
 });
 
